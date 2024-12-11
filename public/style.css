@@ -1,0 +1,214 @@
+/* VH'LERI VMIN YAPIYORUM */
+
+/* VW'LERI VMAX YAPIYORUM */
+
+body {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    /*background-color: #ebecf0;*/
+    /*background-color: #ad84fa;*/
+    /*background-color: rgb(248, 248, 248);
+    background-color: #F4F4F4;*/
+    background-color: #ffffff;
+  }
+
+
+  html, body {
+    max-width: 100%;
+    /*overflow-x: hidden;*/
+    /*overflow-y: hidden;*/
+    /*position:fixed;
+    /*position: relative;*/
+}
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+  }
+
+  :focus{
+    outline: none;
+  }
+
+  .firstRow{
+    /*height: 25vmin;*/ /* 6 vh */
+    padding: 1%;
+    margin-top: 1vmax;
+    /*padding-top: 1%;*/
+  }
+
+  #addTask{
+    background-color: white;
+    padding: 1%;
+    height: 100%;
+    border: 1px solid #979797;
+  }
+
+  #verticalLine{
+    background: linear-gradient(#E1E1E1, #E1E1E1) no-repeat center/2px 90%;
+    padding: 0px;
+  }
+
+.secondRow{
+    /*background-color: aqua;*/
+    /*height: 25vmin;*/
+    /*border: 1px solid #000;*/
+    padding: 1%;
+    max-height: 25vmin;
+  }
+
+  .secondRow h5{
+    text-align: center;
+  }
+
+  #queue{
+    background-color: white;
+    height: 100%;
+    /*border-radius: 3%;*/
+    /*box-shadow: 0px 5px 15px rgb(151, 150, 150);*/
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 1%;
+    /*border: 2px solid rgb(192, 192, 192);*/
+    border: 1px solid #979797;
+    display: flex;
+    flex-direction: column; /*incredibly important*/
+    max-height: 23vmin;
+  }
+
+  
+
+  svg{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+
+  .scrollbar#style-3{
+    float: left;
+    width: 100%;
+    background: rgb(248, 248, 248);
+    overflow-y: scroll;
+    
+  }
+
+  #style-3::-webkit-scrollbar {
+    width: 10px;
+    background-color: #ebecf0;
+  }
+  
+  #style-3::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #F2F2F2;
+    border: 1px solid #ccc;
+  }
+  
+  #style-3::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(left, #fff, #BABFC0);
+    border: 1px solid #aaa;
+    /*background-color: rgb(199, 198, 198);*/
+  }
+  
+  #style-3::-webkit-scrollbar-thumb:hover {
+    background: #BABFC0;
+  }
+  
+  #style-3::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(left, #22ADD4, #1E98BA);
+  }
+
+
+  #item{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 3vmax; /* 6vh */
+    width: 3vmax; /* 6vh */
+    display: inline-table; /* bir turlu olmuyordu, bunu denedim, niyese oldu. */
+    position: relative;
+  }
+
+  #item p{
+    margin: 0px;
+    width: 3vmax;
+    text-align: center;
+    font-size: 0.7vmax;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .thirdRow{
+    /*background-color: rgb(208, 117, 216);*/
+    max-height: 42vmin;
+    padding: 2%;
+    /*padding-left: 2%;
+    padding-right: 2%;*/
+    /*overflow: hidden;*/
+  }
+
+  #task{
+    background-color: white;
+    height: 100%;
+    /*border-radius: 3%;*/
+    /*box-shadow: 0px 5px 15px rgb(151, 150, 150);*/
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 1%;
+    /*border: 2px solid rgb(192, 192, 192);*/
+    border: 1px solid #979797;
+    display: flex;
+    flex-direction: column; /*incredibly important*/
+    max-height: 38vmin;
+  }
+
+  .scrollbar#style-4{
+    float: right;
+    max-height: 40vmin;
+    
+    background-color: rgb(248, 248, 248);
+    background-color: #faf9f9;
+    overflow-y: scroll;
+    width: 100%
+  }
+
+  #style-4::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: #ebecf0;
+  }
+
+  #style-4::-webkit-scrollbar-track {
+    border-radius: 10px;
+    /*background: #d3cdf8;*/
+    background: white;
+    border: 1px solid #868686;
+  }
+
+  #style-4::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(left, #fff, #e4e4e4);
+    border: 1px solid #aaa;
+    background-color: rgb(32, 23, 83);
+  }
+
+  #style-4::-webkit-scrollbar-thumb:hover {
+    /*background: #fff;*/
+    background: #d3cdf8;
+  }
+
+  #style-4::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(left, #22ADD4, #1E98BA);
+  }
