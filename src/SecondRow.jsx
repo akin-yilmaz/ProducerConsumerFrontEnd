@@ -1,5 +1,6 @@
-import React from 'react';
+// Returns a basic container for Queue component.
 
+import React from 'react';
 import { Queue } from './Queue';
 
 

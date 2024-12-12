@@ -1,3 +1,5 @@
+// Returns a component that makes a GET request for queue with a period of 1 second. Based on the response, creates the queue elements (item) as well.
+
 import React, { useState, useEffect } from 'react';
 import { Item } from "./Item";
 import { HiMiniRectangleStack } from "react-icons/hi2";
@@ -8,7 +10,17 @@ function Queue(props) {
     // State to hold the selected values
     const [q, setQ] = useState([]); // State to hold fetched data
     const [error, setError] = useState(null); // State to hold any errors
+    
+    
+    // The dependency array is the second argument to useEffect. It tells React when to re-run the code inside the useEffect.
+    // When the array is empty, the useEffect runs only once, right after the component is rendered the first time.
+    // It won’t re-run, even if the component re-renders.
 
+    // Using an empty array ensures:
+    //The fetchData logic and the polling interval are set up only once.
+    //React doesn’t unnecessarily re-run this logic after every render.
+
+    // as you can see, useEffect is a function call and arguments passed in is a callback function.
     useEffect(() => {
         const fetchData = async () => {
             //console.log("aaaa")
@@ -25,7 +37,7 @@ function Queue(props) {
         const intervalId = setInterval(fetchData, 1000);
     
         // Cleanup: Stop polling on unmount
-        return () => clearInterval(intervalId);
+        return () => clearInterval(intervalId); // returning a callback function.
       }, []); // Empty dependency array ensures this runs only once on mount
 
     function createItem(item){

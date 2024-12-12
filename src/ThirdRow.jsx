@@ -1,3 +1,5 @@
+// returns a component that makes GET call to get all tasks upon each render and each change in props.refreshThreadsView. Based on the response, it creates the tasks and is also container for it.
+
 import React, { useState, useEffect } from 'react';
 import {Task} from './Task.jsx';
 import axios from 'axios'
@@ -5,9 +7,6 @@ import { GrTasks } from "react-icons/gr";
 
 function ThirdRow(props){
     
-    //console.log("aaaa")
-    //const [senderTasks, setSenderTasks] = useState([]);
-    //const [receiverTasks, setReceiverTasks] = useState([]);
     const [tasks, settTasks] = useState([]);
     
     useEffect(() => {
@@ -16,8 +15,6 @@ function ThirdRow(props){
         .get("http://localhost:8080/api/threads")
         .then((result) => {
           console.log(result.data);
-          //setSenderTasks(result.data.SenderThreads);
-          //setReceiverTasks(result.data.ReceiverThreads)
           settTasks(result.data.Threads)
         })
         .catch((error) => console.log(error));

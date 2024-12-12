@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+// Returns a component responsible for making POST request. waitingThreads(Tasks) is fed into request body. This component is responsible for creating Task components as well. 
+// This also sets refreshThreadsView which triggers GET request of getting tasks created by backend after making POST request. 
+
+import React from 'react';
 import {Task} from './Task.jsx';
 import axios from 'axios'
-import { GrTasks } from "react-icons/gr";
 
 function ForthRow(props){
 
@@ -31,8 +33,7 @@ function ForthRow(props){
             props.setRefreshThreadsView(!props.refreshThreadsView);
             props.setWaitingThreads([])
             //props.setRefreshThreadsView(true);
-            
-            
+                   
         } catch (error) {
             console.error("Error occurred during the POST request:", error);
             props.setWaitingThreads([])
@@ -47,7 +48,7 @@ function ForthRow(props){
     };
     
     function CreateTasks(task){
-        console.log(task)
+        //console.log(task)
         return <Task
                             
                 key={Math.random()}
@@ -73,19 +74,15 @@ function ForthRow(props){
                     <div id="task" className="rounded">
 
                         <div style={{display: "flex", width: "100%", marginBottom: "1%", alignItems: "center", justifyContent: "center"}}>
-
                             <h5 style={{fontSize: "1.1vmax", margin: "0px"}} > To Be Submitted Tasks </h5>
-
                         </div>
 
                         <div className="scrollbar" id="style-4" style={{fontSize: "0"}}> 
-                    
                             <div className='row'>
                             
                                 {props.waitingThreads.map(CreateTasks)}
 
                             </div>  
-                
                         </div>
 
                         <div style={{ display: "flex", justifyContent: "center", marginTop: "5px" }}> 
@@ -138,8 +135,6 @@ function ForthRow(props){
                 </div>
 
             </div>;
-    
-
     
 }
 

@@ -1,3 +1,5 @@
+// Returns a basic container for AddTask component.
+
 import React from 'react';
 import { AddTask } from './AddTask';
 

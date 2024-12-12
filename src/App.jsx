@@ -7,16 +7,13 @@ import { ForthRow } from './ForthRow.jsx';
 function App(){
 
     //const [startView, setStartView] = useState(true);
-     
-    const [refreshThreadsView, setRefreshThreadsView] = useState(false)
-    const [waitingThreads, setWaitingThreads] = useState([])
-
+    
+    const [waitingThreads, setWaitingThreads] = useState([]) // set when ADD button is clicked so as to store to be submitted tasks to backend. 
+    const [refreshThreadsView, setRefreshThreadsView] = useState(false) // set when POST request is made so as to trigger GET request for getting tasks created by backend.  
+    
     return <div className="container-fluid">
                 
-                <SecondRow 
-                    setRefreshThreadsView = {setRefreshThreadsView}
-                    refreshThreadsView = {refreshThreadsView}
-                />
+                <SecondRow/>
                 <ThirdRow 
                     refreshThreadsView = {refreshThreadsView}
                     setRefreshThreadsView = {setRefreshThreadsView}

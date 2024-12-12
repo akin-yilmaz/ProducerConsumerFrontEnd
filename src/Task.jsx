@@ -1,3 +1,5 @@
+// Returns the Task component and contains various handlers through which HTTP requests are made.
+
 import axios from "axios";
 import React from "react";
 import Switch from "react-switch";

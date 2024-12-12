@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios'
+// returns the component that creates the to be submitted task objects and pushes created tasks into list that stores to be submitted tasks. 
+
+import React, { useState } from 'react';
 
 function AddTask(props) {
 
