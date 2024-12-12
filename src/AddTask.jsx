@@ -5,48 +5,38 @@ function AddTask(props) {
 
     // State to hold the selected values
     const [countSender, setCountSender] = useState(0);
-    const [prioritySender, setPrioritySender] = useState(5);
+    const [prioritySender, setPrioritySender] = useState("5");
     const [isActiveSender, setIsActiveSender] = useState("Resume");
 
     const [countReceiver, setCountReceiver] = useState(0);
-    const [priorityReceiver, setPriorityReceiver] = useState(5);
+    const [priorityReceiver, setPriorityReceiver] = useState("5");
     const [isActiveReceiver, setIsActiveReceiver] = useState("Resume");
     
     // Function to handle the button click (including the Axios request with POST)
-    const handleAddClick = async () => {
-
-        // Prepare form-data
-        const formData = new FormData();
-        formData.append('countSender', countSender);
-        formData.append('prioritySender', prioritySender);
-        formData.append('isActiveSender', isActiveSender === "Resume" ? true : false);  // Convert to boolean
-        formData.append('countReceiver', countReceiver);
-        formData.append('priorityReceiver', priorityReceiver);
-        formData.append('isActiveReceiver', isActiveReceiver === "Resume" ? true : false); 
-
+    const handleAddClick =  () => {
         console.log("Add button clicked!");
+        let copiedList = [...props.waitingThreads];
 
-        // Perform the axios POST request with formData
-        try {
-            const response = await axios.post("http://localhost:8080/api", formData, {
-                headers: {
-                    "Content-Type": "form-data",
-                },
-            });
-
-            console.log("Server response:", response.data);
-            
-            // No, re-setting a React hook's state variable to the same value does not trigger a re-render.
-            // incredibly important
-
-            props.setRefreshThreadsView(!props.refreshThreadsView);
-            //props.setRefreshThreadsView(true);
-            
-            
-        } catch (error) {
-            console.error("Error occurred during the POST request:", error);
-            
+        for (let i = 0; i < countSender; i++) {
+            copiedList.push(
+                {
+                    isActive: isActiveSender === 'Resume' ? true : false,
+                    priority: prioritySender,
+                    isSender: true
+                });
         }
+
+        for (let i = 0; i < countReceiver; i++) {
+            copiedList.push(
+                {
+                    isActive: isActiveReceiver === 'Resume' ? true : false,
+                    priority: priorityReceiver,
+                    isSender: false
+                });
+        }
+
+        props.setWaitingThreads(copiedList)
+
     };
 
     return <div id="addTask"  className= "rounded">

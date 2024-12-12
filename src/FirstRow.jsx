@@ -11,8 +11,8 @@ function FirstRow(props){
                 <div className="col-4" >
                     
                     <AddTask
-                        setRefreshThreadsView = {props.setRefreshThreadsView}
-                        refreshThreadsView = {props.refreshThreadsView}
+                        waitingThreads = {props.waitingThreads}
+                        setWaitingThreads = {props.setWaitingThreads}
                     />
                     
                 </div>

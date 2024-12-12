@@ -70,6 +70,25 @@ function Task(props) {
             
         }
     };
+
+    if(props.isCreatedByBackend === false){
+
+        return <div className="col-2" 
+                style={{alignItems: "center", justifyContent: "center", position: "relative", marginTop: "1vmax", backgroundColor: "white", borderWidth: "2px", borderStyle: "solid", 
+                borderColor: props.isSender ? (props.isActive ? "#3dfc49" : "#d6ffd9") : (props.isActive ? "#ff1212" : "#ffcfcf"), borderRadius: "5px", marginLeft: "4vmin"}}
+                onClick={() => console.log("Task ID:", props.id)}>
+                
+                <div className="row" style={{alignItems: "center", justifyContent: "center", marginTop: "1vmax"}}>
+
+                    <h6 style={{ color: "black", textAlign: "center"}}>
+                        {"Priority: " + props.priority}
+                    </h6>
+
+                </div>
+                
+            </div>;
+
+    }
         
     return <div className="col-2" 
                 style={{alignItems: "center", justifyContent: "center", position: "relative", marginTop: "1vmax", backgroundColor: "white", borderWidth: "2px", borderStyle: "solid", 

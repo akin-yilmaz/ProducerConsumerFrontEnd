@@ -36,6 +36,7 @@ function ThirdRow(props){
                 priority = {task.priority}
                 refreshThreadsView = {props.refreshThreadsView}
                 setRefreshThreadsView = {props.setRefreshThreadsView}
+                isCreatedByBackend = {true}
                 />
 
     }
@@ -55,6 +56,7 @@ function ThirdRow(props){
                     <h5 style={{fontSize: "1.1vmax", margin: "0px"}} > Tasks </h5>
                     <div style={{position: "relative", marginLeft: "0.75vmax"}} >
                         <GrTasks size="1vmax"/>
+                        <h6 style={{marginLeft: "1.2vmax", fontSize: "0.75vmax"}} > { tasks.length } </h6>
                     </div>
 
                     </div>
